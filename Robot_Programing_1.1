@@ -1,0 +1,14 @@
+import runloop
+import color_sensor
+import color
+import motor
+from hub import port
+
+while True:
+    if color_sensor.color(port.E) is color.WHITE:
+        motor.run_for_degrees (port.D, -360, 200)
+        motor.run_for_degrees (port.C, 360,200)
+    
+    if color_sensor.color(port.E) is color.BLACK:
+        motor.run_for_degrees (port.D, 2, 200)
+        motor.run_for_degrees (port.C, 2, 200)
