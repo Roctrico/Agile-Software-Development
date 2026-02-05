@@ -39,7 +39,8 @@ while True:
         
         # Function for searching when the line is lost (sensor sees black). 
         # The robot rotates in increasing angles left and right to try to relocate the white line. 
-        # After each movement, the sensor checks again for white or red. # If found, the function "return" returns immediately to resume normal behaviour.
+        # After each movement, the sensor checks again for white or red.
+        # If found, the function "return" returns immediately to resume normal behaviour.
         async def black ():
           if color_sensor.color(port.E) is color.BLACK:
                 hub.sound.beep(500,500)
